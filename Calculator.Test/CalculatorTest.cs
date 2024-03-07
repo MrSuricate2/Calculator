@@ -18,6 +18,7 @@ namespace Calculator.Test
 		[InlineData("0,1,2", 3)]
 		[InlineData("1,2,3", 6)]
 		[InlineData("2,3,4", 9)]
+		[InlineData("3,4,5", 12)]
 		public void APlusN(string input, int attendu)
 		{
 			int result = StringCalculator.Add(input);
