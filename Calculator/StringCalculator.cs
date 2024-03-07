@@ -12,13 +12,18 @@ namespace Calculator
 
 		public static int Add(string input)
 		{
-			string[] table = input.Split(",");
+			string combinedString = input.Replace(" ", "");
+
+			string[] table = combinedString.Split(",");
 
 			int total = 0;
 
 			foreach (string s in table)
 			{
-				total += int.Parse(s);
+				if (!string.IsNullOrWhiteSpace(s))
+				{
+					total += int.Parse(s);
+				}
 			}
 
 			return total;
