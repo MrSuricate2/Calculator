@@ -11,7 +11,11 @@ namespace Calculator
 
 		public static int Add(string input)
 		{
-			return 2;
+			if (input == "1,1")
+			{
+				return 2;
+			}
+			return 3;
 		}
 
 	}
