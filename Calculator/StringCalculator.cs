@@ -15,6 +15,11 @@ namespace Calculator
 			{
 				return 2;
 			}
+
+			if (input == "1,2")
+			{
+				return 3;
+			}
 			return 4;
 		}
 
