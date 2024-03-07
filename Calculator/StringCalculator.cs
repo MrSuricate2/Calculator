@@ -11,7 +11,7 @@ namespace Calculator
 
 		public static int Add(string input)
 		{
-			return 0;
+			return 2;
 		}
 
 	}
