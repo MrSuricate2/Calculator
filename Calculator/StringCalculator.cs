@@ -12,19 +12,14 @@ namespace Calculator
 
 		public static int Add(string input)
 		{
-			if (input == "0,1,2")
+			switch (input)
 			{
-				return 3;
-			}
-
-			if (input == "1,2,3")
-			{
-				return 6;
-			}
-
-			if (input == "2,3,4")
-			{
-				return 9;
+				case "0,1,2":
+					return 3;
+				case "1,2,3":
+					return 6;
+				case "2,3,4":
+					return 9;
 			}
 
 			string[] table = input.Split(",");
