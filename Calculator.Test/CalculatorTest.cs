@@ -2,14 +2,12 @@ namespace Calculator.Test
 {
 	public class CalculatorTest
 	{
-		[Fact]
-		public void APlusB()
+		[Theory]
+		[InlineData("1,1", 2)]
+		[InlineData("1,2", 3)]
+		public void APlusB(string input, int attendu)
 		{
-			string input = $"{1},{1}";
-
 			int result = StringCalculator.Add(input);
-
-			int attendu = 2;
 
 			Assert.Equal(result, attendu);
 		}
