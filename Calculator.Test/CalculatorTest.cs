@@ -55,5 +55,17 @@ namespace Calculator.Test
 
 			Assert.Equal(20, parsed);
 		}
+
+		[Fact]
+		public void NombreNégatif()
+		{
+			const string testée = "1,-2";
+
+			void Act() => StringCalculator.Add(testée);
+
+			NombreNégatifException exception = Assert.Throws<NombreNégatifException>(Act);
+			Assert.Equal(1, exception.Position);
+			Assert.Equal(-2, exception.NombreFautif);
+		}
 	}
 }
