@@ -18,11 +18,19 @@ namespace Calculator
 
 			int total = 0;
 
-			foreach (string s in table)
+			for (var index = 0; index < table.Length; index++)
 			{
+				var s = table[index];
 				if (!string.IsNullOrWhiteSpace(s))
 				{
-					total += int.Parse(s);
+					if (!int.IsNegative(int.Parse(s)))
+					{
+						total += int.Parse(s);
+					}
+					else
+					{
+						throw new NombreNégatifException(int.Parse(s),index);
+					}
 				}
 			}
 
