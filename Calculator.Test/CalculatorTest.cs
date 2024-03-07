@@ -13,5 +13,17 @@ namespace Calculator.Test
 
 			Assert.Equal(result, attendu);
 		}
+
+		[Fact]
+		public void APlusN()
+		{
+			string input = "0,1,2";
+
+			int result = StringCalculator.Add(input);
+
+			int attendu = 3;
+
+			Assert.Equal(result, attendu);
+		}
 	}
 }
