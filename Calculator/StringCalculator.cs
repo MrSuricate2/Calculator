@@ -12,23 +12,16 @@ namespace Calculator
 
 		public static int Add(string input)
 		{
-			switch (input)
-			{
-				case "0,1,2":
-					return 3;
-				case "1,2,3":
-					return 6;
-				case "2,3,4":
-					return 9;
-				case "3,4,5":
-					return 12;
-			}
-
 			string[] table = input.Split(",");
 
 			int total = 0;
 
-			return int.Parse(table.First()) + int.Parse(table.Last());
+			foreach (string s in table)
+			{
+				total += int.Parse(s);
+			}
+
+			return total;
 		}
 
 	}
