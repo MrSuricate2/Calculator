@@ -1,7 +1,16 @@
+using System.Numerics;
+
 namespace Calculator.Test
 {
 	public class CalculatorTest
 	{
+		public static IEnumerable<object[]> CasAPlusB()
+		{
+			var random = Random.Shared;
+			yield return [random.Next()/3, random.Next()/3];
+		}
+
+
 		[Theory]
 		[InlineData("1,1", 2)]
 		[InlineData("1,2", 3)]
@@ -24,6 +33,17 @@ namespace Calculator.Test
 			int result = StringCalculator.Add(input);
 
 			Assert.Equal(result, attendu);
+		}
+
+		[Theory]
+		[MemberData(nameof(CasAPlusB))]
+		public void RandomPlusRandom(int a, int b)
+		{
+			string input = $"{a},{b}";
+
+			int result = StringCalculator.Add(input);
+
+			Assert.Equal(result, a+b);
 		}
 	}
 }
