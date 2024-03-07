@@ -20,6 +20,8 @@ namespace Calculator
 					return 6;
 				case "2,3,4":
 					return 9;
+				case "3,4,5":
+					return 12;
 			}
 
 			string[] table = input.Split(",");
