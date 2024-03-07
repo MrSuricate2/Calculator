@@ -45,5 +45,15 @@ namespace Calculator.Test
 
 			Assert.Equal(result, a+b);
 		}
+
+		[Fact]
+		public void Espace()
+		{
+			const string testée = "1 0, ,10";
+
+			int parsed = StringCalculator.Add(testée);
+
+			Assert.Equal(20, parsed);
+		}
 	}
 }
