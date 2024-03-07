@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,18 @@ namespace Calculator
 
 		public static int Add(string input)
 		{
-			return input switch
+
+			string[] table = input.Split(",");
+
+			int total = 0;
+
+			foreach (var t in table)
 			{
-				"1,1" => 2,
-				"1,2" => 3,
-				"2,2" => 4,
-				_ => 5
-			};
+				int numbers = int.Parse(t);
+				
+				total += numbers;
+			}
+			return total;
 		}
 
 	}
