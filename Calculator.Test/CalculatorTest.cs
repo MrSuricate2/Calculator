@@ -14,14 +14,12 @@ namespace Calculator.Test
 			Assert.Equal(result, attendu);
 		}
 
-		[Fact]
-		public void APlusN()
+		[Theory]
+		[InlineData("0,1,2", 3)]
+		[InlineData("1,2,3", 6)]
+		public void APlusN(string input, int attendu)
 		{
-			string input = "0,1,2";
-
 			int result = StringCalculator.Add(input);
-
-			int attendu = 3;
 
 			Assert.Equal(result, attendu);
 		}
